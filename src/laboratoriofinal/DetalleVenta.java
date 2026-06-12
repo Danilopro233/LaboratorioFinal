@@ -1,3 +1,4 @@
+package laboratoriofinal;
 
 public class DetalleVenta {
     private int idDetalle, cantidad;
@@ -8,11 +9,7 @@ public class DetalleVenta {
         this.idDetalle = id;
         this.cantidad = cant;
         this.producto = prod;
-        this.subtotal = calcularSubtotal();
+        this.subtotal = cantidad * prod.getPrecioVenta();
     }
-
-    public double calcularSubtotal() {
-        return this.cantidad * producto.getPrecioVenta();
-    }
-    // Getters y Setters [cite: 108-112]
+    public double getSubtotal() { return subtotal; }
 }

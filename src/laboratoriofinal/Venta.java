@@ -1,9 +1,9 @@
+package laboratoriofinal;
 import java.util.ArrayList;
 
 public class Venta {
     private int idVenta;
     private String fecha;
-    private double total;
     private Cliente cliente;
     private Empleado empleado;
     private ArrayList<DetalleVenta> detalles;
@@ -15,11 +15,8 @@ public class Venta {
         this.empleado = emp;
         this.detalles = new ArrayList<>();
     }
-
-    public void agregarDetalle(DetalleVenta det) {
-        detalles.add(det);
-    }
-
+    public void agregarDetalle(DetalleVenta det) { detalles.add(det); }
+    
     public double calcularTotal() {
         double suma = 0;
         for (DetalleVenta d : detalles) {
@@ -27,5 +24,5 @@ public class Venta {
         }
         return suma;
     }
-    // Getters y Setters [cite: 68-77]
+    public Empleado getEmpleado() { return empleado; }
 }
